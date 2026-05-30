@@ -59,6 +59,7 @@ export default function App() {
         {/* Header */}
         <div>
           <h1 className="display-font text-3xl font-bold" style={{ color: 'var(--ink)' }}>
+            <span style={{ color: 'var(--accent)' }}>🎨</span>
             Color Converter
           </h1>
           <p className="mt-1 text-sm" style={{ color: 'var(--muted)' }}>
