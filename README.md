@@ -2,7 +2,7 @@
 
 A free, instant color format converter — part of [FreeAppStore](https://freeappstore.online).
 
-**Live app:** [convert-to-color.freeappstore.online](https://convert-to-color.freeappstore.online)
+**Live app:** [convert-color.freeappstore.online](https://convert-color.freeappstore.online/)
 
 ## Features
 
