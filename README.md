@@ -1,40 +1,50 @@
-# template-standalone
+# Color Converter
 
-The standalone-app template used by [`fas init`](https://github.com/freeappstore-online/platform/tree/main/packages/cli) to scaffold new free apps for [FreeAppStore](https://freeappstore.online).
+A free, instant color format converter — part of [FreeAppStore](https://freeappstore.online).
 
-You almost certainly want to use the CLI, not clone this directly:
+**Live app:** [convert-to-color.freeappstore.online](https://convert-to-color.freeappstore.online)
 
-```bash
-npm i -g @freeappstore/cli
-fas init my-app
-```
+## Features
 
-The CLI clones this template, replaces every `freeappstore` placeholder with your app id, runs `git init`, and makes the first commit — the result is a runnable app you can `pnpm dev` immediately.
+- Accepts any CSS color input: HEX, `rgb()`, `hsl()`, named colors, and more
+- Converts to **10 formats** simultaneously:
+  - HEX, RGB, HSL, HSV, CMYK, HWB, LCH, LAB, XYZ, CSS Color Name
+- Live color preview with animated spinning border
+- Click any output card to copy the value to clipboard
+- Native color picker synced with the text input
+- PWA — installable, works offline
+- Dark mode support
+- Free, no tracking, MIT licensed
 
-## What's in here
-
-- `web/` — Vite + React + TypeScript app, ESM-only, no Tailwind config needed (utility classes via inline styles + the `Shell` component).
-- `web/src/components/Shell.tsx` — sidebar layout with brand fonts (Manrope + Fraunces), CSS variables (`--paper`, `--ink`, `--accent`), and dark-mode support out of the box.
-- `web/src/main.tsx` — React entry point.
-- `web/index.html` — links Manrope + Fraunces, sets PWA meta tags, references the manifest.
-- `web/public/manifest.json` — PWA manifest with `name`, `display`, `start_url`.
-- `package.json` — pnpm workspace, `dev` / `build` / `typecheck` / `test` scripts.
-- `.github/workflows/compliance.yml` — runs the same checks as `fas check` on every PR. Source of truth lives in the [`@freeappstore/compliance`](https://www.npmjs.com/package/@freeappstore/compliance) package.
-
-## Cloning manually (not recommended)
-
-If you really want to scaffold by hand:
+## Development
 
 ```bash
-git clone https://github.com/freeappstore-online/template-standalone my-app
-cd my-app
-# Replace freeappstore → my-app in package.json, web/index.html, web/src/main.tsx, README, etc.
-rm -rf .git && git init
-pnpm install && pnpm dev
+pnpm install
+pnpm dev
 ```
 
-Then run `fas publish` to provision repo + hosting + DNS, or open the [submission form](https://github.com/freeappstore-online/submissions/issues/new) for maintainer review.
+## Build & Deploy
+
+```bash
+pnpm build          # type-check + Vite production build → web/dist/
+git push origin main  # auto-deploys to R2 via GitHub Actions
+```
+
+## Checks
+
+```bash
+fas check        # compliance audit (brand, manifest, PWA, bundle size, …)
+fas screencheck  # visual layout check across 12 reference viewports
+```
+
+## Tech
+
+- React 19 + TypeScript + Vite 8
+- Tailwind CSS 4
+- [`culori`](https://culorijs.org) for color space conversions
+- [`@freeappstore/sdk`](https://freeappstore.online) for shell, auth, and storage
+- PWA via `vite-plugin-pwa` (Workbox, auto-update service worker)
 
 ## License
 
-MIT.
+MIT

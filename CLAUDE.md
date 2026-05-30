@@ -7,9 +7,9 @@ A free app on FreeAppStore.
 - Build: `pnpm build`
 - Deploy: `git push origin main` (auto-deploys to R2 via GitHub Actions)
 
-Free, MIT-licensed, no tracking. For platform conventions, read
-https://freeappstore.online/skills.md
-before writing or changing anything.
+Free, MIT-licensed, no tracking.
+
+> **For AI agents:** Read [SKILLS.md](https://raw.githubusercontent.com/freeappstore-online/freeappstore/main/SKILLS.md) before making any changes — it covers the full platform stack, brand rules, mobile requirements, and deploy flow.
 
 ## SDK
 

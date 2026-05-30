@@ -151,7 +151,8 @@ body::after {
 }
 
 #root {
-  min-height: 100dvh;
+  height: 100dvh;
+  overflow-y: auto;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   isolation: isolate;
@@ -171,6 +172,10 @@ button, a, nav, [role="button"], label {
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+@keyframes spin-gradient {
+  to { transform: rotate(360deg); }
 }
 
 button,
