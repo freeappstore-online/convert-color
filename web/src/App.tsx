@@ -4,7 +4,7 @@ import { Shell, BuildInfo } from '@freeappstore/sdk/ui'
 import { convertColor, type ColorFormats } from './utils/colorConversion'
 import ConversionCard from './components/ConversionCard'
 
-const fas = initApp({ appId: 'convert-to-color' })
+const fas = initApp({ appId: 'convert-color' })
 
 const FORMAT_LABELS: { key: keyof ColorFormats; label: string }[] = [
   { key: 'hex', label: 'HEX' },
